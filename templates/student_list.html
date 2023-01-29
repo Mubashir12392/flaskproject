@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Student List{% endblock title %}
+{% block body %}
+<a class="btn btn-success mt-4 mb-4 ms-4" href="/student/add">Add Student</a>
+<table class="table table-bordered">
+    <thead>
+      <tr> <!--row-->
+        <th scope="col">Roll Number#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Class</th>
+        <th scope="col">Date of Birth</th>
+        <th scope="col">Fees</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for student in students %}
+      <tr>
+        <th scope="row">
+            {{student['roll']}}
+        </th>
+        
+        <td>
+          {{student['f_name']}}
+        </td>
+        <td>
+          {{student['l_name']}}
+        </td>
+        <td>
+          {{student['class']}}
+        </td>
+        <td>
+          {{student['dofbirth']}}
+        </td>
+        <td>
+          {{student['fee']}}
+        </td>
+        <td>
+            <a class="btn btn-primary" href="/student/{{student['roll']}}">View</a>
+            <a class="btn btn-danger" href="/student/{{student['roll']}}/delete">Delete</a>
+            <a class="btn btn-secondary" href="/student/{{student['roll']}}/edit">Edit</a>
+        </td>
+       </tr>
+    {% endfor %} 
+    </tbody>
+  </table>
+  </html>
+{% endblock %}

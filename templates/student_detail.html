@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% block title %}
+{{student["f_name"]}}
+{% endblock title %}
+
+{% block body %}
+
+<div class="card" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">{{student["f_name"]}}</h5>
+    <p class="card-text">
+      Born on date {{student["dofbirth"]}} and is payying us fee {{student["fee"]}}
+    </p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Last Name-{{student["l_name"]}}</li>
+    <li class="list-group-item">Date of Birth-{{student["dofbirth"]}}</li>
+    <li class="list-group-item">Roll No-{{student["roll"]}}</li>
+  </ul>
+  <div class="card-body">
+    <a href="http://192.168.0.101:5000/student/1/delete" class="card-link">Delete Student</a>
+    <a href="http://192.168.0.101:5000/student.list" class="card-link">View All students</a>
+  </div>
+</div>
+{% endblock body %}

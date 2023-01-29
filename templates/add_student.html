@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Add Student
+{% endblock title %}
+    
+
+
+{% block body %}
+    <form action="" method="POST">
+        <strong>Roll Number: </strong>
+        <input type="number" name="roll_number"> <br/>
+        <strong>First Name: </strong>
+        <input type="text" name="first_name"> <br/>
+        <strong>Last Name: </strong>
+        <input type="text" name="last_name"> <br/>
+        <strong>Date Of Birth: </strong>
+        <input type="text" name="date_of_birth"> <br/>
+        <strong>Class </strong>
+        <input type="text" name="class"> <br/>
+        <strong>Fee: </strong>
+        <input type="number" name="fee">
+        <br />
+        <input type="submit" class="btn btn-success">
+    </form>
+{% endblock body %}
+    
